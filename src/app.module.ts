@@ -1,7 +1,18 @@
 import { Module } from '@nestjs/common';
-import { AuthModule } from './modules';
+import {
+  AuthModule,
+  UsersModule,
+  PermissionsModule,
+  RolesModule,
+} from './modules';
 import { MongodbConnection } from './config';
 @Module({
-  imports: [AuthModule, MongodbConnection],
+  imports: [
+    MongodbConnection,
+    AuthModule,
+    UsersModule,
+    PermissionsModule,
+    RolesModule,
+  ],
 })
-export class AppModule { }
+export class AppModule {}

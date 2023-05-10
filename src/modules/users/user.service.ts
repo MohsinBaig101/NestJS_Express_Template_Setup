@@ -1,6 +1,8 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UserService {
-    public async getUsers(): Promise<any> { return; }
+  public async getUsers(): Promise<any> {
+    return;
+  }
 }

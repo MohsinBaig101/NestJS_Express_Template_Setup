@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { userSchema } from './entities';
+import { permissionSchema } from './entities';
 const mongooseModuleArr = MongooseModule.forFeature([
-  { name: 'users', schema: userSchema },
+  { name: 'permissions', schema: permissionSchema },
 ]);
 @Module({
   imports: [mongooseModuleArr],
   controllers: [],
   providers: [],
 })
-export class UsersModule {}
+export class PermissionsModule {}

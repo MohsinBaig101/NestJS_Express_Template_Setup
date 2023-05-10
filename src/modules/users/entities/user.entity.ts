@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 import mongoose_delete from 'mongoose-delete';
 
-export const userSchema = new Schema({
+export const userSchema = new Schema(
+  {
     firstName: { type: String, maxlength: 50 },
     lastName: { type: String, maxlength: 50 },
     email: { type: String, unique: true },
@@ -11,10 +12,12 @@ export const userSchema = new Schema({
     emailConfirmed: { type: Boolean, default: false },
     lastLogin: { type: Date },
     archived: { type: Date },
-    roles: [{ type: mongoose.Types.ObjectId, ref: 'roles' }]
-},
-{
-    timestamps:true
-});
+    roles: [{ type: mongoose.Types.ObjectId, ref: 'roles' }],
+  },
+  {
+    timestamps: true,
+    synchronize: true,
+  },
+);
 
-userSchema.plugin(mongoose_delete);
+// userSchema.plugin(mongoose_delete);
